@@ -1,13 +1,14 @@
-# Sample Hardhat Project
-
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
-
-Try running some of the following tasks:
 
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
+npx hardhat run scripts/deploy.js --network linea
+```
+
+Verify contract:
+```bash
+npx hardhat verify --network xai 0xe70Bfcae2620593A02d736B97EA4DeA451B33301 'https://api-launchpad.omnihub.xyz/api/metadata/xai/'
+```
+
+Verify contract:
+```bash
+npx hardhat verify --network linea_testnet 0x80483501543F07BdD30325955DCCddDA3dad7912 "QWE" "QWE" 0 10 'https://api-launchpad.omnihub.xyz/api/metadata/linea_testnet/' 0x866D493D596fA8b11a032B9759Fb36f4f3fFFB9E
 ```
