@@ -1,7 +1,10 @@
 const hre = require("hardhat");
+require("dotenv").config();
+
+const {API_LINK} = process.env;
 
 function getContractArguments(network) {
-    return [`https://api-launchpad.omnihub.xyz/api/metadata/${network}/`];
+    return [API_LINK + `${network}/`];
 }
 
 async function main() {

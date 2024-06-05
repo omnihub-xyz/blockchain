@@ -5,6 +5,10 @@ const {
   PRIVATE_KEY,
   POLYGON_API_KEY,
   LINEASCAN_API_KEY,
+  SCROLL_API_KEY,
+  BLAST_API_KEY,
+  BASE_API_KEY,
+  OPTIMISM_API_KEY,
 } = process.env;
 
 /** @type import('hardhat/config').HardhatUserConfig */
@@ -52,9 +56,42 @@ module.exports = {
       url: 'https://inevm.calderachain.xyz/http',
       accounts: [PRIVATE_KEY],
     },
-
-
-
+    zetachain: {
+      url: 'https://zetachain-evm.blockpi.network/v1/rpc/public',
+      accounts: [PRIVATE_KEY],
+    },
+    merlin: {
+      url: 'https://rpc.merlinchain.io',
+      accounts: [PRIVATE_KEY],
+    },
+    zklink: {
+      url: 'https://rpc.zklink.io',
+      accounts: [PRIVATE_KEY],
+    },
+    pulse: {
+      url: 'https://rpc.pulsechain.com',
+      accounts: [PRIVATE_KEY],
+    },
+    arbitrum: {
+      url: 'https://1rpc.io/arb',
+      accounts: [PRIVATE_KEY],
+    },
+    'arbitrum-nova': {
+      url: 'https://nova.arbitrum.io/rpc',
+      accounts: [PRIVATE_KEY],
+    },
+    polygon: {
+      url: 'https://1rpc.io/matic',
+      accounts: [PRIVATE_KEY],
+    },
+    taiko: {
+      url: 'https://rpc.taiko.xyz',
+      accounts: [PRIVATE_KEY],
+    },
+    mint: {
+      url: 'https://rpc.mintchain.io',
+      accounts: [PRIVATE_KEY],
+    },
     linea_testnet: {
       url: 'https://linea-goerli.blockpi.network/v1/rpc/public',
       accounts: [PRIVATE_KEY],
@@ -63,11 +100,19 @@ module.exports = {
   etherscan: {
     apiKey: {
       linea: LINEASCAN_API_KEY,
-      rari: 'rari_key',
-      xai: 'xai_key',
-      injective: 'injective_key',
       polygonMumbai: POLYGON_API_KEY,
       linea_testnet: LINEASCAN_API_KEY,
+      scroll: SCROLL_API_KEY,
+      blast: BLAST_API_KEY,
+      base: BASE_API_KEY,
+      optimism: OPTIMISM_API_KEY,
+      rari: '-',
+      xai: '-',
+      injective: '-',
+      zora: '-',
+      mode: '-',
+      zetachain: '-',
+      viction: '-',
     },
     customChains: [
       {
@@ -110,7 +155,55 @@ module.exports = {
           apiURL: "https://explorer.inevm.com/api",
           browserURL: "https://explorer.inevm.com/",
         },
-      }
+      },
+      {
+        network: "scroll",
+        chainId: 534352,
+        urls: {
+          apiURL: "https://api.scrollscan.com/api",
+          browserURL: "https://scrollscan.com/"
+        }
+      },
+      {
+        network: "blast",
+        chainId: 81457,
+        urls: {
+          apiURL: "https://api.blastscan.io/api",
+          browserURL: "https://blastscan.io"
+        }
+      },
+      {
+        network: "zora",
+        chainId: 7777777,
+        urls: {
+          apiURL: "https://explorer.zora.energy/api",
+          browserURL: "https://explorer.zora.energy"
+        }
+      },
+      {
+        network: "mode",
+        chainId: 34443,
+        urls: {
+          apiURL: "https://explorer.mode.network/api",
+          browserURL: "https://explorer.mode.network"
+        }
+      },
+      {
+        network: "optimism",
+        chainId: 10,
+        urls: {
+          apiURL: "https://api-optimistic.etherscan.io/api",
+          browserURL: "https://optimistic.etherscan.io/"
+        }
+      },
+      {
+        network: "zetachain",
+        chainId: 7000,
+        urls: {
+          apiURL: "https://api-zetachain.blockscout.com/api",
+          browserURL: "https://zetachain.blockscout.com/"
+        }
+      },
     ]
   }
 };
